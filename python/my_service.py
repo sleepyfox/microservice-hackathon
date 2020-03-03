@@ -1,8 +1,10 @@
 #!/usr/bin/python3 -u
+import os
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 
-MQTT_HOST="test.mosquitto.org"
+MQTT_HOST=os.getenv("MQTT_HOST", "test.mosquitto.org").strip()
+print("Will connect to "+str(MQTT_HOST))
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
