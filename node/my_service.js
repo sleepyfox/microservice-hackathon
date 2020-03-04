@@ -1,7 +1,8 @@
 const mqtt = require('mqtt')
 
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
+const MQTT_HOST = process.env.MQTT_HOST || 'test.mosquitto.org'
 const service_name = 'kittens'
+var client  = mqtt.connect(`mqtt://${MQTT_HOST}`)
 
 client.on('connect', function () {
   // The '#' wildcard matches all topics below this one
