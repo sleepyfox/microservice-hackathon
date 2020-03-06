@@ -2,7 +2,7 @@ require 'rubygems'
 require 'mqtt'
 
 SERVICE_NAME = 'kittens'
-MQTT_HOST = ENV['MQTT_HOST'] || 'test.mosquitto.org'
+MQTT_HOST = ENV['MQTT_HOST'] || 'mqtt.fluux.io'
 
 # Subscribe example
 MQTT::Client.connect(MQTT_HOST) do |c|
